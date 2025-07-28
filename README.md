@@ -1,5 +1,6 @@
 # Eye_Color_Detection
-**INTRODUCTION**
+**INTRODUCTION** 
+
 Eye color detection is an important task in the field of image processing and computer 
 vision. This project involves detecting the color of a person’s eye using Convolutional 
 Neural Networks (CNNs). Eye color, a distinguishing biometric trait, can be categorized 
@@ -8,6 +9,7 @@ labeled eye color images, we can classify the input eye images into their respec
 categories with high accuracy.
 
 **METHODOLOGY**
+
 3.1 Overview 
 The project follows a standard machine learning pipeline that includes data collection, data 
 preparation, preprocessing, and model training. Both a custom Convolutional Neural 
