@@ -161,7 +161,11 @@ The CNN achieved strong classification accuracy, and Transfer Learning models fu
   Improve augmentation and preprocessing pipelines
 
 **References**
+
   Goodfellow et al., Deep Learning
+  
   Krizhevsky et al., ImageNet Classification
+  
   Bhargavi & Pranathi, CNN for Eye Color Classification
+  
   Zhao et al., Eye Color Classification in the Wild
