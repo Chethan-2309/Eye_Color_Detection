@@ -1,46 +1,167 @@
-# Eye_Color_Detection
-**INTRODUCTION** 
+# Eye Color Detection
 
-Eye color detection is an important task in the field of image processing and computer 
-vision. This project involves detecting the color of a person’s eye using Convolutional 
-Neural Networks (CNNs). Eye color, a distinguishing biometric trait, can be categorized 
-into several types such as brown, blue, green, gray etc. By training a CNN on a dataset of 
-labeled eye color images, we can classify the input eye images into their respective color 
-categories with high accuracy.
+A Convolutional Neural Network (CNN) based system to classify human eye color into Blue, Brown, Gray, and Green from an image.
 
-**METHODOLOGY**
+**Overview**
 
-3.1 Overview 
-The project follows a standard machine learning pipeline that includes data collection, data 
-preparation, preprocessing, and model training. Both a custom Convolutional Neural 
-Network (CNN) model and Transfer Learning techniques using pre-trained architectures are 
-employed to improve classification performance and generalization. 
-3.1.1 Data Collection 
-A labeled dataset containing images of eyes in different colors such as brown, blue, green, 
-and gray is used. Each image is annotated with the correct eye color category to enable 
-supervised learning. The dataset is collected from publicly available sources and manually 
-curated collections to ensure diversity. It covers a range of variations in lighting, pose, and 
-image quality to better reflect real-world conditions. 
-3.1.2 Data Preparation 
-The dataset is divided into training, validation, and testing subsets to properly evaluate 
-model performance. All images are resized to a uniform dimension to maintain consistency 
-and match model input requirements. Normalization is applied to scale pixel values between 
-0 and 1. Data augmentation techniques such as rotation, flipping, and brightness changes are 
-applied to the training set to enhance model generalization. 
-3.1.3 Pre-Processing - Resizing images - Normalizing pixel values - Data augmentation (rotation, flipping) 
-3.1.4 Convolutional Neural Networks (CNNs) 
-CNNs are used to automatically learn and extract key features from eye images. Their 
-layered structure is effective for image data, enabling accurate classification based on 
-learned features. 
-3.1.5 Transfer Learning 
-To further enhance model performance, Transfer Learning is employed using pre-trained 
-models such as VGG16 and ResNet50. These models, trained on large-scale datasets like 
-ImageNet, are fine-tuned on the eye color dataset. This approach leverages learned features 
-from generic image data and adapts them to the specific task of eye color classification, 
-improving accuracy and reducing training time. 
-3.2 Architecture of Proposed System 
-The CNN and Transfer Learning models are trained on the dataset and tested on unseen 
-data. Results show that the models achieve high accuracy in detecting eye color, with 
-Transfer Learning models often outperforming baseline CNNs due to their ability to 
-leverage pre-learned visual features.
+Eye color detection plays an important role in biometrics, security, healthcare, and human-computer interaction.
 
+This project uses a CNN model (with optional Transfer Learning) to accurately classify eye colors from cropped eye images.
+
+
+**Problem Statement**
+
+Manual eye–color classification is subjective and slow.
+
+The goal is to build an automated eye-color classifier that works reliably across variations like:
+
+  Lighting
+  
+  Occlusion (hair, glasses)
+  
+  Low-resolution images
+  
+  Subtle color differences
+  
+
+**Motivation**
+
+Eye color is a unique biometric trait. With the increasing use of facial analysis and recognition systems, automating eye-color detection can support:
+
+  Identity verification
+  
+  Forensics
+  
+  Healthcare diagnostics
+  
+  Smart marketing
+  
+  Interactive applications
+  
+
+**Literature Review**
+
+Modern research shows that CNNs outperform classical image-processing methods such as histogram and texture analysis.
+
+Notable studies:
+
+  Human Eye Color Classification Using CNN – Achieved high accuracy using custom CNN and strong data augmentation.
+  
+  Deep Learning for Eye Color Classification in the Wild – Used advanced preprocessing and augmentation to handle real-world images.
+  
+  These works validate CNN + Transfer Learning for eye-color prediction.
+
+
+**Methodology**
+  1. Data Collection
+     
+    Dataset includes labeled eye images across four classes:
+    
+      Blue, Brown, Gray, Green
+      
+    Images vary in lighting, resolution, and angle.
+    
+  2. Preprocessing
+     
+    Resize to 128 × 128
+    
+    Normalize pixel values
+    
+    Train/validation/test split
+    
+    Data augmentation:
+    
+      Flip
+      
+      Rotation
+      
+      Brightness/contrast
+      
+      Gamma adjustment
+      
+      Coarse dropout
+      
+  3. Model Architecture
+
+    Two approaches:
+     
+      Custom CNN
+     
+        Input → Conv → Pool → Conv → Pool → Flatten → Dense → Softmax (4 classes)
+     
+      Transfer Learning
+     
+        Models used:
+     
+          VGG16
+     
+          ResNet50
+
+**System Requirements**
+
+  Hardware
+  
+    i5 processor (or higher)
+    
+    8–16 GB RAM
+    
+    Optional GPU for faster training
+    
+  Software
+
+    Python 3.7+
+    
+    TensorFlow / Keras
+    
+    NumPy, Matplotlib
+    
+    OpenCV
+    
+    scikit-learn
+
+**Training & Evaluation**
+
+  Plots generated:
+  
+    Training accuracy vs validation accuracy
+    
+    Training loss vs validation loss
+    
+    Model evaluation includes:
+    
+      Overall accuracy
+    
+      Confusion matrix
+      
+      Testing on unseen images
+
+**Eye Color Prediction (Example Usage)**
+
+    test_image = cv2.imread("sample.jpg")
+  
+    predicted_color = predict_eye_color_from_array(test_image)
+  
+    print("Predicted Eye Color:", predicted_color)
+  
+    Output:
+      Predicted Eye Color: Brown
+
+**Results**
+
+The CNN achieved strong classification accuracy, and Transfer Learning models further improved performance in noisy or low-light images.
+
+**Future Scope**
+
+  Expand dataset with more diversity
+  
+  Add real-time detection with TensorFlow Lite / OpenCV
+  
+  Use advanced models (EfficientNet, ViT)
+  
+  Improve augmentation and preprocessing pipelines
+
+**References**
+  Goodfellow et al., Deep Learning
+  Krizhevsky et al., ImageNet Classification
+  Bhargavi & Pranathi, CNN for Eye Color Classification
+  Zhao et al., Eye Color Classification in the Wild
